@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  api_test:
+    image: dockercomposeandnginx
+    # container_name: api_test
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    # ports:
+    #   - 8080:3000
+  nginx:
+    container_name: nginx_test
+    image: nginx:latest
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d
+    depends_on:
+      - api_test
+    ports:
+      - 8080:4000
