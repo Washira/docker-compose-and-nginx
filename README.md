@@ -92,7 +92,7 @@ server {
 
 It means listening external request at port `8080` and forward to EGINX at port `4000`
 
-Then EGINX forward to url of service at port `3000` (AKA Reverse Proxy)
+Then NGINX forward to url of service at port `3000` (AKA Reverse Proxy)
 
 You can change the ports all that you want
 
